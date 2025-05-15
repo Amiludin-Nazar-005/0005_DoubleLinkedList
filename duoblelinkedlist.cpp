@@ -54,16 +54,34 @@ public:
                 START = newNode;
             return;
         }
-        node * current = START;
-        while (current-> next != NULL && current -> next-> noMhs < nim ){
-            current = current -> next;
+        node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
         }
-        if (current -> next != NULL && nim == current ->next->noMhs){
-            cout << "\nDuplicate roll number not allowed"<< endl;
+        if (current->next != NULL && nim == current->next->noMhs)
+        {
+            cout << "\nDuplicate roll number not allowed" << endl;
             return;
         }
 
-        newNode->next = current -> next;
-        newNode-> prev = current;
+        newNode->next = current->next;
+        newNode->prev = current;
+
+        if (current->next != NULL)
+            current->next->prev = newNode;
+        current->next = newNode;
+
+        void hapus()
+        {
+            if (START == NULL)
+            {
+                cout << "\nList is empty" << endl;
+                return;
+            }
+            cout << "\nEnter roll number of the student whose record is to be deleted";
+            int rollNO;
+            cin >> rollNO;
+        }
     }
 };
