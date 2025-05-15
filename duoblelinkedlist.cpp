@@ -2,23 +2,27 @@
 #include <string>
 using namespace std;
 
-class node{
-    public:
+class node
+{
+public:
     int noMhs;
     node *next;
     node *prev;
 };
 
-class doublelinkedlist{
-    private:
+class doublelinkedlist
+{
+private:
     node *START;
 
-    public:
-    doublelinkedlist(){
+public:
+    doublelinkedlist()
+    {
         START = NULL;
     }
 
-    void addnode(){
+    void addnode()
+    {
         int nim;
         string nim;
         cout << "\nEnter the roll number of the student";
@@ -28,6 +32,10 @@ class doublelinkedlist{
     // step 1: allcate memory for new node
     node *newnode = new node();
 
-    
+    // step 2 : assign value to the data fields
+    newnode-> noMhs = nim;
+
+    // step 3: 
+
 
 };
