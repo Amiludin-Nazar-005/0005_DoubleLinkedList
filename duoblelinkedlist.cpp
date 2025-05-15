@@ -92,29 +92,53 @@ public:
             if (START != NULL)
                 START->prev = NULL;
         }
-        else {
-            current -> prev ->next = current-> next;
+        else
+        {
+            current->prev->next = current->next;
 
             if (current->next != NULL)
-            current->next ->prev = current->prev;
+                current->next->prev = current->prev;
 
-            delete current ;
-            cout << "record with roll number "<< rollNO << "deleted" << endl;
+            delete current;
+            cout << "record with roll number " << rollNO << "deleted" << endl;
         }
     }
-    void traverse(){
+    void traverse()
+    {
         if (START == NULL)
         {
-            cout << "\nList is empty"<< endl;
+            cout << "\nList is empty" << endl;
             return;
         }
         node *currentnode = START;
 
         cout << "\nRecord is accending oerder of roll number are: \n";
         int i = 0;
-        while (currentnode != NULL){
-            cout << i+1<<". " <<currentnode -> noMhs << " " <<endl;
+        while (currentnode != NULL)
+        {
+            cout << i + 1 << ". " << currentnode->noMhs << " " << endl;
+            currentnode = currentnode->next;
+        }
+    }
+    void retraverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+        node *currentnode =START;
+        int i =0;
+        while (currentnode->next != NULL){
             currentnode = currentnode -> next;
+            i++;
+        }
+        cout << "\nRecord is descending order of roll number are: \n";
+        while (currentnode != NULL)
+        {
+            cout << i +1 << ". " << currentnode-> noMhs << " " <<endl;
+            currentnode = currentnode -> prev;
+            i++;
         }
     }
 };
