@@ -25,4 +25,9 @@ class doublelinkedlist{
         cin >> nim;
     }
 
+    // step 1: allcate memory for new node
+    node *newnode = new node();
+
+    
+
 };
