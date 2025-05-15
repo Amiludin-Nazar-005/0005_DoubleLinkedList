@@ -27,15 +27,20 @@ public:
         string nim;
         cout << "\nEnter the roll number of the student";
         cin >> nim;
-    }
 
-    // step 1: allcate memory for new node
-    node *newnode = new node();
+        // step 1: allcate memory for new node
+    node *newNode = new node();
 
     // step 2 : assign value to the data fields
-    newnode-> noMhs = nim;
+    newNode->noMhs = nim;
 
-    // step 3: 
-
+    // step 3: insert st beginning
+    if (START == NULL || nim <= START->noMhs){
+        if (START != NULL && nim == START->noMhs){
+            cout << "\nDuplicate number not allowed "<< endl;
+            return;
+        }
+    }
+    }
 
 };
