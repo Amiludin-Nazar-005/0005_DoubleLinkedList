@@ -50,7 +50,7 @@ public:
                 START->prev = NULL;
 
             newNode->prev = NULL;
-            
+
             START = newNode;
 
             return;
@@ -128,23 +128,26 @@ public:
             cout << "\nList is empty" << endl;
             return;
         }
-        node *currentnode =START;
-        int i =0;
-        while (currentnode->next != NULL){
-            currentnode = currentnode -> next;
+        node *currentnode = START;
+        int i = 0;
+        while (currentnode->next != NULL)
+        {
+            currentnode = currentnode->next;
             i++;
         }
         cout << "\nRecord is descending order of roll number are: \n";
         while (currentnode != NULL)
         {
-            cout << i +1 << ". " << currentnode-> noMhs << " " <<endl;
-            currentnode = currentnode -> prev;
+            cout << i + 1 << ". " << currentnode->noMhs << " " << endl;
+            currentnode = currentnode->prev;
             i++;
         }
     }
-    void searchdata(){
-        if (START == NULL){
-            cout << "\nList is empty"<< endl;
+    void searchdata()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
             return;
         }
         int rollNO;
@@ -152,15 +155,35 @@ public:
         cin >> rollNO;
 
         node *current = START;
-        while (current != NULL && current ->noMhs != rollNO)
-        current = current -> next ;
+        while (current != NULL && current->noMhs != rollNO)
+            current = current->next;
 
-        if (current == NULL){
+        if (current == NULL)
+        {
             cout << "record not found\n";
         }
-        else {
+        else
+        {
             cout << "record found\n";
-            cout << "roll number: "<<current->noMhs << endl;
+            cout << "roll number: " << current->noMhs << endl;
         }
     }
 };
+int main()
+{
+    doublelinkedlist list;
+    char choice;
+    do
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Add record\n";
+        cout << "2. delete record\n";
+        cout << "3. view ascending\n";
+        cout << "4. view descending\n";
+        cout << "5. search record \n";
+        cout << "6. exit \n";
+        cout << "enter your choice:";
+
+        cin >> choice;
+    }
+}
