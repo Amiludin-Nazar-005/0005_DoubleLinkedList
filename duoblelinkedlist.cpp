@@ -49,9 +49,10 @@ public:
             if (START != NULL)
                 START->prev = NULL;
 
-            newNode->prev = NULL
+            newNode->prev = NULL;
+            
+            START = newNode;
 
-                START = newNode;
             return;
         }
         node *current = START;
@@ -139,6 +140,27 @@ public:
             cout << i +1 << ". " << currentnode-> noMhs << " " <<endl;
             currentnode = currentnode -> prev;
             i++;
+        }
+    }
+    void searchdata(){
+        if (START == NULL){
+            cout << "\nList is empty"<< endl;
+            return;
+        }
+        int rollNO;
+        cout << "\nEnter the roll number to search : ";
+        cin >> rollNO;
+
+        node *current = START;
+        while (current != NULL && current ->noMhs != rollNO)
+        current = current -> next ;
+
+        if (current == NULL){
+            cout << "record not found\n";
+        }
+        else {
+            cout << "record found\n";
+            cout << "roll number: "<<current->noMhs << endl;
         }
     }
 };
